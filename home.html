@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="angular-route.js"></script>
+<script src="logincontroller.js"></script>
+<script src="login.css"></script>
+<body ng-app="myapp" ng-style="{'background-image':'url(https://farm8.staticflickr.com/7288/9167365008_d0e3ab0127_k.jpg)'}">
+<div ng-controller="logincontroller" >
+         <div class="cols-lg-3">
+           <div class="jumbotron" style="background-color:black">
+               <h3 style="text-align:center;color:white;height:10px">MY FIRST ANGULAR JS APPLICATION</h3>
+           </div>
+         </div>
+         <div class="cols-lg-6">
+           <div style="font-size:1050%;text-align: center;;color:White">{{time}}</div>
+              <span style="font-size:400%;text-align:center;color:White">{{messge}}</span>
+         </div>
+         <div class="cols-lg-6 pull-right" style="background: black;postition:relative">
+              <ul class="todo-list">
+                <li class="todo-item" style="text-color:white;postition:absolute" ng-repeat="taskitem in tasks track by $index ">
+                  <input  type="checkbox"  ng-model="taskitem.status">
+                     <span class="done-{{taskitem.status}}" ng-model="taskitem.taskmessage" contenteditable="false" ng-dblclick="contentedit()" ng-keyup="clickagain()">{{taskitem.taskmessage}}
+                </li>
+                <input type="text" ng-keyup="searchEnter()" ng-model="texttoaddtask"style="display:block;margin:0;width:100%;text-align:center" />
+              </ul>
+        </div>
+         <div class="cols-lg-6">
+
+         </div>
+
+</div>
+</body>
+</html>
